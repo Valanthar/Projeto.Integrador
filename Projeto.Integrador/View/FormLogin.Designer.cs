@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            lblUsuario_login = new Label();
+            lblSenha_Login = new Label();
+            btnEntrar_login = new Button();
+            btnVoltar_login = new Button();
+            txtSenhaLogin = new TextBox();
+            txtUsuarioLogin = new MaskedTextBox();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // label1
@@ -44,54 +47,89 @@
             label1.TabIndex = 0;
             label1.Text = "TELA DE LOGIN DO BALACO BACO";
             // 
-            // label2
+            // lblUsuario_login
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(139, 144);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 15);
-            label2.TabIndex = 1;
-            label2.Text = "USUARIO";
+            lblUsuario_login.AutoSize = true;
+            lblUsuario_login.Location = new Point(139, 144);
+            lblUsuario_login.Name = "lblUsuario_login";
+            lblUsuario_login.Size = new Size(28, 15);
+            lblUsuario_login.TabIndex = 1;
+            lblUsuario_login.Text = "CPF";
             // 
-            // label3
+            // lblSenha_Login
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(158, 230);
-            label3.Name = "label3";
-            label3.Size = new Size(45, 15);
-            label3.TabIndex = 2;
-            label3.Text = "SENHA";
+            lblSenha_Login.AutoSize = true;
+            lblSenha_Login.Location = new Point(139, 185);
+            lblSenha_Login.Name = "lblSenha_Login";
+            lblSenha_Login.Size = new Size(45, 15);
+            lblSenha_Login.TabIndex = 2;
+            lblSenha_Login.Text = "SENHA";
             // 
-            // button1
+            // btnEntrar_login
             // 
-            button1.Location = new Point(131, 285);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "ENTRAR";
-            button1.UseVisualStyleBackColor = true;
+            btnEntrar_login.Location = new Point(131, 285);
+            btnEntrar_login.Name = "btnEntrar_login";
+            btnEntrar_login.Size = new Size(75, 23);
+            btnEntrar_login.TabIndex = 3;
+            btnEntrar_login.Text = "ENTRAR";
+            btnEntrar_login.UseVisualStyleBackColor = true;
+            btnEntrar_login.Click += btnEntrar_login_Click;
             // 
-            // button2
+            // btnVoltar_login
             // 
-            button2.Location = new Point(429, 282);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 4;
-            button2.Text = "VOLTAR";
-            button2.UseVisualStyleBackColor = true;
+            btnVoltar_login.Location = new Point(381, 285);
+            btnVoltar_login.Name = "btnVoltar_login";
+            btnVoltar_login.Size = new Size(75, 23);
+            btnVoltar_login.TabIndex = 4;
+            btnVoltar_login.Text = "VOLTAR";
+            btnVoltar_login.UseVisualStyleBackColor = true;
+            btnVoltar_login.Click += btnVoltar_login_Click_1;
+            // 
+            // txtSenhaLogin
+            // 
+            txtSenhaLogin.Location = new Point(203, 182);
+            txtSenhaLogin.Margin = new Padding(3, 2, 3, 2);
+            txtSenhaLogin.Name = "txtSenhaLogin";
+            txtSenhaLogin.Size = new Size(110, 23);
+            txtSenhaLogin.TabIndex = 2;
+            txtSenhaLogin.UseSystemPasswordChar = true;
+            // 
+            // txtUsuarioLogin
+            // 
+            txtUsuarioLogin.Location = new Point(186, 141);
+            txtUsuarioLogin.Margin = new Padding(3, 2, 3, 2);
+            txtUsuarioLogin.Mask = "000\\.000\\.000\\-00";
+            txtUsuarioLogin.Name = "txtUsuarioLogin";
+            txtUsuarioLogin.Size = new Size(110, 23);
+            txtUsuarioLogin.TabIndex = 1;
+            txtUsuarioLogin.MaskInputRejected += txtUsuarioLogin_MaskInputRejected;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(139, 250);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(185, 15);
+            linkLabel1.TabIndex = 5;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Não possui cadastro? Clique aqui!";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            ClientSize = new Size(695, 407);
+            Controls.Add(linkLabel1);
+            Controls.Add(txtUsuarioLogin);
+            Controls.Add(txtSenhaLogin);
+            Controls.Add(btnVoltar_login);
+            Controls.Add(btnEntrar_login);
+            Controls.Add(lblSenha_Login);
+            Controls.Add(lblUsuario_login);
             Controls.Add(label1);
             Name = "FormLogin";
-            Text = "FormLogin";
+            Text = "TelaLogin";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -99,9 +137,12 @@
         #endregion
 
         private Label label1;
-        private Label label2;
-        private Label label3;
-        private Button button1;
-        private Button button2;
+        private Label lblUsuario_login;
+        private Label lblSenha_Login;
+        private Button btnEntrar_login;
+        private Button btnVoltar_login;
+        private TextBox txtSenhaLogin;
+        private MaskedTextBox txtUsuarioLogin;
+        private LinkLabel linkLabel1;
     }
 }

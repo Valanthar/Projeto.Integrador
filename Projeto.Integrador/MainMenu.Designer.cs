@@ -37,10 +37,10 @@
             // lblBoasVindas
             // 
             lblBoasVindas.AutoSize = true;
-            lblBoasVindas.Font = new Font("Arial Narrow", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBoasVindas.Location = new Point(192, 37);
+            lblBoasVindas.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBoasVindas.Location = new Point(219, 49);
             lblBoasVindas.Name = "lblBoasVindas";
-            lblBoasVindas.Size = new Size(188, 43);
+            lblBoasVindas.Size = new Size(285, 54);
             lblBoasVindas.TabIndex = 0;
             lblBoasVindas.Text = "BEM VINDO";
             lblBoasVindas.Click += label1_Click;
@@ -48,42 +48,45 @@
             // lblPossuiConta
             // 
             lblPossuiConta.AutoSize = true;
-            lblPossuiConta.Location = new Point(236, 106);
+            lblPossuiConta.Location = new Point(270, 141);
             lblPossuiConta.Name = "lblPossuiConta";
-            lblPossuiConta.Size = new Size(91, 15);
+            lblPossuiConta.Size = new Size(115, 20);
             lblPossuiConta.TabIndex = 1;
             lblPossuiConta.Text = "ja possui conta?";
             lblPossuiConta.Click += label2_Click;
             // 
             // btnSim
             // 
-            btnSim.Location = new Point(38, 202);
+            btnSim.Location = new Point(43, 269);
+            btnSim.Margin = new Padding(3, 4, 3, 4);
             btnSim.Name = "btnSim";
-            btnSim.Size = new Size(144, 23);
-            btnSim.TabIndex = 2;
+            btnSim.Size = new Size(165, 31);
+            btnSim.TabIndex = 1;
             btnSim.Text = "SIM";
             btnSim.UseVisualStyleBackColor = true;
             btnSim.Click += btnSim_Click;
             // 
             // btnNão
             // 
-            btnNão.Location = new Point(428, 202);
+            btnNão.Location = new Point(489, 269);
+            btnNão.Margin = new Padding(3, 4, 3, 4);
             btnNão.Name = "btnNão";
-            btnNão.Size = new Size(138, 23);
-            btnNão.TabIndex = 3;
+            btnNão.Size = new Size(158, 31);
+            btnNão.TabIndex = 2;
             btnNão.Text = "NÃO";
             btnNão.UseVisualStyleBackColor = true;
             btnNão.Click += btnNão_Click;
             // 
             // MainMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(601, 314);
+            ClientSize = new Size(687, 419);
             Controls.Add(btnNão);
             Controls.Add(btnSim);
             Controls.Add(lblPossuiConta);
             Controls.Add(lblBoasVindas);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainMenu";
             Text = "Form1";
             ResumeLayout(false);
