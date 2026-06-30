@@ -9,7 +9,7 @@ namespace Projeto.Integrador.DAO
     {
         public void RegistrarOperacao(Extrato extrato)
         {
-            using (SqlConnection conexao = ConexaoDAO.ObterConexao())
+            using (SqlConnection conexao = ConexaoDAO.ObterConexao(conn))
             {
                 string sql = @"INSERT INTO Extrato
                       (NumeroConta,
@@ -42,7 +42,7 @@ namespace Projeto.Integrador.DAO
         {
             List<Extrato> extratos = new List<Extrato>();
 
-            using (SqlConnection conexao = ConexaoDAO.ObterConexao())
+            using (SqlConnection conexao = ConexaoDAO.ObterConexao(conn))
             {
                 string sql = "SELECT * FROM Extrato WHERE NumeroConta = @NumeroConta " +
                              "ORDER BY DataOperacao DESC";

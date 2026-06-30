@@ -5,17 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data.SqlClient;
+
 namespace Projeto.Integrador.DAO
 {
-    internal class ConexaoDAO
+    public class ConexaoDAO
     {
-        private static string _stringConexao = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BancoCaixaEletronico;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30";
-        
-        public static SqlConnection ObterConexao()
+        public static readonly string conexao =
+            @"Data Source=(LocalDB)\MSSQLLocalDB;
+              AttachDbFilename=|DataDirectory|\BancoProjeto.mdf;
+              Integrated Security=True;
+              Connect Timeout=30";
+
+        public static SqlConnection ObterConexao(SqlConnection conn)
         {
-            SqlConnection conexao = new SqlConnection(_stringConexao);
-            conexao.Open();
-            return conexao;
+            using SqlConnection novaConexao = new SqlConnection(conexao);
+            novaConexao.Open();
+
+            return novaConexao;
         }
     }
 }
+
