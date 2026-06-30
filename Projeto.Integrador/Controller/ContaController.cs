@@ -13,7 +13,7 @@ namespace Projeto.Integrador.Controller
     {
         public void CriarConta(Conta conta)
         {
-            using (SqlConnection conexao = ConexaoDAO.ObterConexao(conn))
+            using (SqlConnection conexao = ConexaoDAO.ObterConexao())
             {
                 string sql = "INSERT INTO Conta (Saldo, UsuarioId) " +
                              "VALUES (@Saldo, @UsuarioId)";
@@ -28,7 +28,7 @@ namespace Projeto.Integrador.Controller
 
         public Conta BuscarContaPorUsuario(Usuario usuario)
         {
-            using (SqlConnection conexao = ConexaoDAO.ObterConexao(conn))
+            using (SqlConnection conexao = ConexaoDAO.ObterConexao())
             {
                 string sql = "SELECT * FROM Conta WHERE UsuarioId = @UsuarioId";
 
@@ -53,7 +53,7 @@ namespace Projeto.Integrador.Controller
 
         public void AtualizarSaldo(Conta conta)
         {
-            using (SqlConnection conexao = ConexaoDAO.ObterConexao(conn))
+            using (SqlConnection conexao = ConexaoDAO.ObterConexao())
             {
                 string sql = "UPDATE Conta SET Saldo = @Saldo " +
                              "WHERE NumeroConta = @NumeroConta";

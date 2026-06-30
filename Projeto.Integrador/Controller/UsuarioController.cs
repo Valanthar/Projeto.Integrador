@@ -12,7 +12,7 @@ namespace Projeto.Integrador.DAO
     {
         public void CadastrarUsuario(Usuario usuario)
         {
-            using (SqlConnection conexao = ConexaoDAO.ObterConexao(conn))
+            using (SqlConnection conexao = ConexaoDAO.ObterConexao())
             {
                 string sql = "INSERT INTO Usuario (Nome, Sobrenome, Senha, CPF, DataNascimento) " +
                              "VALUES (@Nome, @Sobrenome, @Senha, @CPF, @DataNascimento);" +
@@ -32,7 +32,7 @@ namespace Projeto.Integrador.DAO
 
         public Usuario BuscarUsuario(string cpf, string senha)
         {
-            using (SqlConnection conexao = ConexaoDAO.ObterConexao(conn))
+            using (SqlConnection conexao = ConexaoDAO.ObterConexao())
             {
                 string cpfLimpo = cpf.Replace(".", "").Replace("-", "");
 
@@ -63,7 +63,7 @@ namespace Projeto.Integrador.DAO
 
         public bool ExisteUsuario(string cpf)
         {
-            using (SqlConnection conexao = ConexaoDAO.ObterConexao(conn))
+            using (SqlConnection conexao = ConexaoDAO.ObterConexao())
             {
                 string cpfLimpo = cpf.Replace(".", "").Replace("-", "");
 

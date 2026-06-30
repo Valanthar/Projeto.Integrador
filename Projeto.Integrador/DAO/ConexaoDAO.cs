@@ -1,28 +1,29 @@
 ﻿using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Data.SqlClient;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Projeto.Integrador.DAO
 {
     public class ConexaoDAO
     {
-        public static readonly string conexao =
-            @"Data Source=(LocalDB)\MSSQLLocalDB;
-              AttachDbFilename=|DataDirectory|\BancoProjeto.mdf;
-              Integrated Security=True;
-              Connect Timeout=30";
-
-        public static SqlConnection ObterConexao(SqlConnection conn)
+        public static SqlConnection ObterConexao()
         {
-            using SqlConnection novaConexao = new SqlConnection(conexao);
-            novaConexao.Open();
+            string caminho = Path.Combine(
+                Application.StartupPath,
+                "DAO",
+                "Database.mdf");
 
-            return novaConexao;
+            string conexao =
+                $@"Data Source=(LocalDB)\MSSQLLocalDB;
+                   AttachDbFilename={caminho};
+                   Integrated Security=True;
+                   Connect Timeout=30;
+                   TrustServerCertificate=True;";
+
+            SqlConnection conn = new SqlConnection(conexao);
+            conn.Open();
+
+            return conn;
         }
     }
 }
